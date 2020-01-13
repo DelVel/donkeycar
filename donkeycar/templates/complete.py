@@ -127,7 +127,7 @@ def drive(cfg, model_path=None, use_joystick=False, model_type=None, camera_type
         ctr = MyJoystickController(throttle_dir=cfg.JOYSTICK_THROTTLE_DIR,
                                     throttle_scale=cfg.JOYSTICK_MAX_THROTTLE,
                                     steering_scale=cfg.JOYSTICK_STEERING_SCALE,
-                                    auto_record_on_throttle=cfg.AUTO_RECORD_ON_$
+                                    auto_record_on_throttle=cfg.AUTO_RECORD_ON_THROTTLE)
 
         ctr.set_deadzone(cfg.JOYSTICK_DEADZONE)
         
