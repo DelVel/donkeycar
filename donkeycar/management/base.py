@@ -91,10 +91,12 @@ class CreateCar(BaseCommand):
         config_template_path = os.path.join(TEMPLATES_PATH, 'cfg_' + template + '.py')
         myconfig_template_path = os.path.join(TEMPLATES_PATH, 'myconfig.py')
         train_template_path = os.path.join(TEMPLATES_PATH, 'train.py')
+        myjoystick_template_path = os.path.join(TEMPLATES_PATH, 'my_joystick.py')
         car_app_path = os.path.join(path, 'manage.py')
         car_config_path = os.path.join(path, 'config.py')
         mycar_config_path = os.path.join(path, 'myconfig.py')
         train_app_path = os.path.join(path, 'train.py')
+        myjoystick_app_path = os.path.join(path, 'my_joystick.py')
         
         if os.path.exists(car_app_path) and not overwrite:
             print('Car app already exists. Delete it and rerun createcar to replace.')
@@ -113,7 +115,13 @@ class CreateCar(BaseCommand):
         else:
             print("Copying train script. Adjust these before starting your car.")
             shutil.copyfile(train_template_path, train_app_path)
-
+ 
+        if os.path.exists(myjoystick_app_path) and not overwrite:
+            print('My_joystick already exists. Delete it and rerun createcar to replace.')
+        else:
+            print("Copying my_joystick script.")
+            shutil.copyfile(myjoystick_template_path, myjoystick_app_path)
+        
         if not os.path.exists(mycar_config_path):
             print("Copying my car config overrides")
             shutil.copyfile(myconfig_template_path, mycar_config_path)
