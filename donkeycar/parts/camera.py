@@ -156,10 +156,10 @@ class CSICamera(BaseCamera):
         # initialize the camera and stream
         self.camera = cv2.VideoCapture(
             self.gstreamer_pipeline(
-                capture_width =self.capture_width,
-                capture_height =self.capture_height,
-                output_width=self.w,
-                output_height=self.h,
+                capture_width = 160,  # self.capture_width,
+                capture_height =120,  # self.capture_height,
+                output_width= 160,  # self.w,
+                output_height=120,  # self.h,
                 framerate=self.framerate,
                 flip_method=self.flip_method),
             cv2.CAP_GSTREAMER)
